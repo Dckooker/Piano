@@ -1,43 +1,58 @@
-<html>  
+<!-- 
 
-    <head>  
-        <script type="text/javascript" src="script.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head> 
+    html: (HyperText Markup Language) Used to tell a browser what language it should read in. (*Code is like any written language, there are rules to follow for each one, and there are lots!*)
 
-    <body class="pianoBody">  
-        <p class="title">Welcome to Note Player</p>  
-        <div id='PianoKeys'>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="sharp-key"></div>
-            <div class="flat-key"></div>
-            <div class="flat-key"></div>
-        </div>  
-        <br>
-        <br>
-        <button type="button" onClick="stop()" class="btn btn-danger">STOP</button>
-    </body>  
+    div: (Division) Used to divide things into groups.
 
-</html>  
+    head: (Header) Used to define things the page will use for your page. 
+
+    body: The base for what you see on a screen.
+
+    p: (Paragraph) Used for any text on the page.
+
+    class: Used for multiple things that would all share a similar look.
+
+    id: Used for individual things that would not share a similar look.
+
+    rel: (Relationship) Used to tell the page what something is.
+
+    href: (Hypertext reference) Used to tell the page there is a link.
+
+ -->
+
+ <html>  
+
+ <!-- This is where we show the page the things it needs to use!  -->
+ <head>
+     <script type="text/javascript" src="Note_Player.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="Note_Player.css">
+ </head> 
+
+ <!-- This is the start of the page! -->
+ <body id="piano-body">  
+
+     <!-- Change this to change the words on the page! -->
+     <p id="title">Welcome to Note Player</p>  
+
+     <!-- This is the piano! -->
+     <div id='piano-div'>
+
+         <!-- These are the keys you see on the page! -->
+         <div class="flat-key"></div> <!-- Each key is marked with a class to determine what it will look like -->
+         <div class="sharp-key"></div> 
+         <div class="flat-key"></div>
+         <div class="sharp-key"></div>
+         <div class="flat-key"></div>
+     </div> 
+
+     <!-- These provide spacing between the keys and the stop button -->
+     <br>
+     <br>
+
+     <!-- This is the stop button! -->
+     <button type="button" onClick="stop()" class="btn btn-danger">STOP</button> 
+
+ </body>  
+
+</html>
