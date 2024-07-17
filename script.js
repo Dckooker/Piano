@@ -1,52 +1,40 @@
-const audio = new Audio('./piano_key.mp3');
-let keyRates = []
+/*
 
+    let: Used to declare a Variable (which is a way to store information).
+
+    function: Declare a function (which is a way to share common code, calculate things and keep your code clean).
+
+*/
+
+// Keeps track of what id things will be.
 let keyId = -1;
-const numberOfOctaves = 2;
-
-const playedKeys = []
 
 window.addEventListener('load', function() {
-    getKeys(audio)
-})
+    getKeys();
+});
 
+// Keeping track of the variable "keyId", adding to it, and returning it.
 function setKeyId() {
     keyId = keyId + 1;
-
     return keyId;
 }
 
-function getRates(numberOfKeys) {
-    for(var i = 0; i < numberOfKeys; i++) {
-        keyRates.push(2 ** ((i - Math.floor(numberOfOctaves / 2) * 12) / 12))
-    }
-}
-
-function setClicker(key, sound) {
+// Setting the action of the key it's given
+function setKeyAction(key) {
     key.addEventListener('click', function() {
-        const newSound = sound.cloneNode();
-        newSound.preservesPitch = false;
-        newSound.playbackRate = keyRates[key.id]
-        playedKeys.push(newSound);
-        newSound.play();
-    } );
+        alert(key.id);
+    });
 }
 
-function getKeys(sound) {
-    const keys = document.getElementById('PianoKeys').querySelectorAll('div');
+// Getting the keys from the html and looping through them
+function getKeys() {
 
-    getRates(keys.length)
+    // This gets the keys from the html by finding the "piano-div", then getting all the divs (keys) underneath it.
+    const keys = document.getElementById('piano-div').querySelectorAll('div');
 
+    // Looping through the keys and setting their actions.
     keys.forEach(key => {
         key.id = setKeyId();
-        setClicker(key, sound);
-      });
-}
-
-function stop() {
-    playedKeys.forEach(key => {
-        key.pause();
-        key.currentTime = 0;
-    })
-    playedKeys = []
+        setKeyAction(key);
+    });
 }
